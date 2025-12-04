@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { StyleSheet, Image, Text, View } from "react-native";
 
 export default function HomeScreen() {
@@ -5,25 +6,25 @@ export default function HomeScreen() {
         <View style={styles.screen}>
             <View style={styles.header}>
                 <Text style={{color: '#C596A6'}}>=</Text>
-                <View style={{borderColor: '#C596A6', borderWidth: 2, borderRadius: 20, padding: 5, paddingHorizontal: 35}}>
+                <View style={styles.headerText}>
                     <Text style={{color: '#C596A6'}}>Studying</Text>
                 </View>
                 <View style={{display: 'flex', flexDirection: 'row', gap: 5}}>
-                    <View style={{backgroundColor: '#C596A6', paddingHorizontal: 12, borderRadius: 20, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <View style={styles.headerButton1}>
                         <Text>✦</Text>
                     </View>
-                    <View style={{backgroundColor: '#A45B74', paddingHorizontal: 12, borderRadius: 20, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <View style={styles.headerButton2}>
                         <Text>♥</Text>
                     </View>
                 </View>
             </View>
             <View style={styles.content}>
                 <Text style={{fontWeight: 700, fontSize: 20}}>Timer Mode</Text>
-                <Image source={{uri:'https://super.abril.com.br/wp-content/uploads/2021/08/SI_430_Lo-fi_Linha-do-tempo_04.png?quality=70&w=1024&crop=1' }} style={{width: 200, height: 200, borderRadius: 15}}></Image>
+                <Image source={{uri:'https://super.abril.com.br/wp-content/uploads/2021/08/SI_430_Lo-fi_Linha-do-tempo_04.png?quality=70&w=1024&crop=1' }} style={styles.image}></Image>
                 <Text style={styles.timer}>01:00:00</Text>
                 <View style={styles.timebar}>
-                    <View style={{width: '60%', height: '3%', backgroundColor: '#E38DAF'}}></View>
-                    <View style={{width: '40%', height: '3%', backgroundColor: '#D9BAC5'}}></View>
+                    <View style={styles.bar1}></View>
+                    <View style={styles.bar2}></View>
                 </View>
                 <View style={styles.buttonszone}>
                     <View style={styles.smallButton}>
@@ -103,6 +104,51 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
         padding: 42,
         borderRadius: 80
+    },
+
+    headerText: {
+        borderColor: '#C596A6', 
+        borderWidth: 2, 
+        borderRadius: 20, 
+        padding: 5, 
+        marginLeft: '20%',
+        paddingHorizontal: 35
+    },
+
+    bar1: {
+        width: '60%', 
+        height: '3%', 
+        backgroundColor: '#E38DAF'
+    },
+
+    bar2: {
+        width: '40%', 
+        height: '3%', 
+        backgroundColor: '#D9BAC5'
+    },
+
+    headerButton1: {
+        backgroundColor: '#C596A6', 
+        paddingHorizontal: 12, 
+        borderRadius: 20, 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center'    
+    },
+
+    headerButton2: {
+        backgroundColor: '#A45B74', 
+        paddingHorizontal: 12, 
+        borderRadius: 20, 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center' 
+    },
+
+    image: {
+        width: 200, 
+        height: 200, 
+        borderRadius: 15
     }
 
 });
